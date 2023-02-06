@@ -10,7 +10,6 @@ import List from './cats/List';
 const BACKEND_URL: string = "http://localhost:8080/cat";
 
 export const trpc = createReactQueryHooks<TRPCRouter>();
-
 function App() {
   const [queryClient] = useState(() => new QueryClient());
   const [trpcClient] = useState(() => trpc.createClient({ url: BACKEND_URL }));

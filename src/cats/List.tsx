@@ -8,6 +8,7 @@ function List(props: {
 }) {
   const [error, setError] = useState("");
   const cats = trpc.useQuery(['list']);
+
   const deleteMutation = trpc.useMutation(['delete'], {
     onSuccess: () => {
       cats.refetch();
@@ -31,10 +32,10 @@ function List(props: {
           {cat.name}
         </span>
         <span>
-          <a href="#" onClick={props.setDetail.bind(null, cat.id)}>detail</a>
+          <a href="https://google.com" onClick={props.setDetail.bind(null, cat.id)}>detail</a>
         </span>
         <span>
-          <a href="#" onClick={handleDelete.bind(null, cat.id)}>delete</a>
+          <a href="https://google.com" onClick={handleDelete.bind(null, cat.id)}>delete</a>
         </span>
       </div>
     );
